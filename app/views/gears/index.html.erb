@@ -1,3 +1,13 @@
 <div class="main-visual">
   campcamp
 </div>
+
+<% @gears.each do |gear| %>
+  <div>
+    <p>名前 <%= gear.name %></p>
+    <p>メーカー <%= gear.maker %></p>
+    画像 <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
+    <p>紹介 <%= gear.introduction %></p>
+    <p>ユーザ名 <%= gear.user.name %></p>
+  </div>
+<% end %>

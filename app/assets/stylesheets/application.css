@@ -49,4 +49,9 @@ header {
 
 footer {
   text-align: center;
+  background-image: url(aozora.jpg);
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
