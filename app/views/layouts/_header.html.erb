@@ -1,0 +1,31 @@
+<header>
+  <ul class="nav-list">
+    <li class="nav-item">左1</li>
+    <li class="nav-item">左2</li>
+  
+    <li class="nav-item">
+      <h1 class="heading">
+        campGear
+      </h1>
+    </li>
+  
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-sign-out-alt"> ログアウト</i>
+        <% end %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to new_user_registration_path do %>
+          <i class="fas fa-user-plus"> 新規登録</i>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to new_user_session_path do %>
+          <i class="fas fa-sign-in-alt"> ログイン</i>
+        <% end %>
+      </li>
+    <% end %>
+  <ul>
+</header>
