@@ -14,3 +14,19 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// js使うので追記
+//= require jquery
+//= require jquery_ujs
+
+// ページトップへの移動をゆっくりと
+$(function() {
+  // #back内のaタグがクリックされた時の処理
+  $('#back a').on('click',function(event){
+    // イベント発生時に行われる処理
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
+});

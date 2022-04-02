@@ -9,16 +9,21 @@
         <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
       </div>
       <div class="gear-text">
-          <h4><%= gear.name %></h4>
-          <h4><%= gear.maker %></h4>
-          <h4><%= gear.introduction %></h4>
-          <h4><%= gear.user.name %></h4>
-          <% if gear.user_id == current_user.id %>
-            <%= link_to "削除", gear_path(gear), method: :delete %>
-          <% end %>
+        <h4><%= gear.name %></h4>
+        <h4><%= gear.maker %></h4>
+        <h4><%= gear.introduction %></h4>
+        <h4><%= gear.user.name %></h4>
+        <% if gear.user_id == current_user.id %>
+          <%= link_to "削除", gear_path(gear), method: :delete %>
+        <% end %>
       </div>
     </div>
   <% end %>
+  <span id="back">
+    <a href="#"> <!-- ページ最上部に移動する、jsを使うと移動時に動きをつけられる-->
+      <%= image_tag 'arrow.png', :size =>'50x50' %>
+    </a>
+  </span>
 </div>
 
 <div class="pagenation">

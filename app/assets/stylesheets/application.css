@@ -74,6 +74,12 @@ header {
   text-align: center;
 }
 
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
 footer {
   text-align: center;
   background-image: url(aozora.jpg);
