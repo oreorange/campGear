@@ -45,13 +45,33 @@ header {
   height: 300px; /* 高さ300px */
   background-image: url(aozora.jpg);
   background-position: center;
+  margin-bottom: 10px;
 }
 
 .main {
-  width: 80%;
-  display: flex;
-  justify-content: center;
+  width: 800px;
   margin:0 auto;
+}
+
+.gear-item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+  border-bottom: solid #c0c0c0;
+  margin-top: 10px;
+}
+
+.gear-image {
+}
+
+.gear-text {
+  margin: 0 50px;
+  padding-top: 50px;
+}
+
+.pagenation {
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 footer {

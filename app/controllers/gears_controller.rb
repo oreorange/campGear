@@ -1,6 +1,6 @@
 class GearsController < ApplicationController
   def index
-    @gears = Gear.all
+    @gears = Gear.all.page(params[:page]).reverse_order
   end
   
   def new
@@ -27,6 +27,11 @@ class GearsController < ApplicationController
   end
   
   def destroy
+    @gear = Gear.find(params[:id])
+    if @gear.user_id == current_user.id
+      @gear.destroy
+      redirect_to gears_path
+    end
   end
   
   private

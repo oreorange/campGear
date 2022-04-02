@@ -2,16 +2,25 @@
   campcamp
 </div>
 
-<% @gears.each do |gear| %>
 <div class="main">
-  <div>
-    <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
-  </div>
-  <div>
-    <p><%= gear.name %></p>
-    <p><%= gear.maker %></p>
-    <p><%= gear.introduction %></p>
-    <p><%= gear.user.name %></p>
-  </div>
+  <% @gears.each do |gear| %>
+    <div class="gear-item">
+      <div class="gear-image">
+        <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
+      </div>
+      <div class="gear-text">
+          <h4><%= gear.name %></h4>
+          <h4><%= gear.maker %></h4>
+          <h4><%= gear.introduction %></h4>
+          <h4><%= gear.user.name %></h4>
+          <% if gear.user_id == current_user.id %>
+            <%= link_to "削除", gear_path(gear), method: :delete %>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
-<% end %>
+
+<div class="pagenation">
+  <%= paginate @gears %>
+</div>
