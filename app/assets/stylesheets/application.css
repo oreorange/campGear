@@ -47,6 +47,13 @@ header {
   background-position: center;
 }
 
+.main {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin:0 auto;
+}
+
 footer {
   text-align: center;
   background-image: url(aozora.jpg);

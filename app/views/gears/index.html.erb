@@ -3,11 +3,15 @@
 </div>
 
 <% @gears.each do |gear| %>
+<div class="main">
   <div>
-    <p>名前 <%= gear.name %></p>
-    <p>メーカー <%= gear.maker %></p>
-    画像 <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
-    <p>紹介 <%= gear.introduction %></p>
-    <p>ユーザ名 <%= gear.user.name %></p>
+    <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
   </div>
+  <div>
+    <p><%= gear.name %></p>
+    <p><%= gear.maker %></p>
+    <p><%= gear.introduction %></p>
+    <p><%= gear.user.name %></p>
+  </div>
+</div>
 <% end %>
