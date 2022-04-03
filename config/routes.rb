@@ -2,8 +2,12 @@ Rails.application.routes.draw do
 
   # 管理者用　URL/admin/sign_in...
   devise_for :admin, skip: [:regisstrations, :passwords],controllers: {
-    sessions: "asmin/sessions"
+    sessions: "admin/sessions"
   }
+  namespace :admin do
+    resources :genres, except: [:new, :show, :destroy]
+  end
+  
   devise_for :users
   resources :gears
   resources :users, only: %i[index show edit update]

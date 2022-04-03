@@ -3,8 +3,12 @@ class ApplicationController < ActionController::Base
 
   protected
   
-  def after_sign_in_path_for(resource)
-    gears_path
+  def after_sign_in_path_for(resource_or_scope)
+    if resource.is_a?(Admin)
+      admin_genres_path
+    else
+      gears_path
+    end
   end
 
   def configure_permitted_parameters
