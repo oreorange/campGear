@@ -13,6 +13,9 @@
         <h4><%= gear.maker %></h4>
         <h4><%= gear.introduction %></h4>
         <h4><%= gear.user.name %></h4>
+        <span class="gear-genre">
+          <%= gear.genre.name %>
+        </span>
         <% if gear.user_id == current_user.id %>
           <%= link_to "削除", gear_path(gear), method: :delete %>
         <% end %>

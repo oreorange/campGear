@@ -1,10 +1,32 @@
-<%= form_with model:@genre, url:admin_genres_path, local:true do |f| %>
-  <p>ジャンル名</p>
-    <%= f.text_field :name, placeholder: "ジャンル名" %>
-    <%= f.submit'新規登録' %>
-<% end %>
+<div>
+  <% if admin_signed_in? %>
+    <%= form_with model:@genre, url:admin_genres_path, local:true do |f| %>
+      <p>ジャンル名</p>
+        <%= f.text_field :name, placeholder: "ジャンル名" %>
+        <%= f.submit'新規登録' %>
+    <% end %>
+  <% else %>
+    <p>管理者でログインするとジャンルを追加できます</p>
+  <% end %>
+</div>
 
-<h4>ジャンル一覧</h4>
-<% @genres.each do |genre| %>
-  <p><%= genre.name %></p>
+<div>
+  <h3>ジャンル一覧</h3>
+  <% @genres.each do |genre| %>
+    <p><%= genre.name %></p>
+  <% end %>
+</div>
+
+<% if admin_signed_in? %>
+  <li class="nav-item">
+    <%= link_to destroy_admin_session_path, method: :delete do %>
+      <i class="fas fa-sign-out-alt"> 管理者/ログアウト</i>
+    <% end %>
+  </li>
+<% else %>
+  <li class="nav-item">
+    <%= link_to new_admin_session_path do %>
+      <i class="fas fa-sign-in-alt"> 管理者/ログイン</i>
+    <% end %>
+  </li>
 <% end %>

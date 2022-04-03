@@ -9,5 +9,7 @@
   <h4>紹介</h4>
   <%= f.text_area :introduction %>
   <h4>ジャンル</h4>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank:"--選択してください--" %>
+  
   <%= f.submit '投稿' %>
 <% end %>
