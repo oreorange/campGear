@@ -1,6 +1,8 @@
 <header>
   <ul class="nav-list">
-    <li class="nav-item">左1</li>
+    <li class="nav-item">
+      <%= link_to "マイページ", user_path(current_user) %>
+    </li>
     <li class="nav-item">
       <%= link_to "投稿", new_gear_path %>
     </li>
