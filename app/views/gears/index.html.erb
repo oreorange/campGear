@@ -19,6 +19,7 @@
         </span>
         <% if user_signed_in? %> <!--ログイン前でも投稿一覧は確認できる-->
           <% if gear.user_id == current_user.id %>
+            <%= link_to "編集", edit_gear_path(gear) %>
             <%= link_to "削除", gear_path(gear), method: :delete %>
           <% end %>
         <% end %>

@@ -21,9 +21,15 @@ class GearsController < ApplicationController
   end
 
   def edit
+    @gear = Gear.find(params[:id])
   end
   
   def update
+    gear = Gear.find(params[:id])
+    if gear.user_id == current_user.id
+      gear.update(gear_params)
+      redirect_to gears_path
+    end
   end
   
   def destroy
@@ -37,7 +43,7 @@ class GearsController < ApplicationController
   private
   
   def gear_params
-    params.require(:gear).permit(:name, :maker, :image, :introduction, :price, :genre_id)
+    params.require(:gear).permit(:name, :maker, :image, :introduction, :price, :genre_id, :user_id)
   end
   
 end
