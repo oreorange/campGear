@@ -73,3 +73,7 @@ gem 'devise-i18n-views'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+# ActiveStorage 導入
+# $ rails active_storage:install # gears.image_id カラム削除
+gem 'image_processing', '~> 1.2'

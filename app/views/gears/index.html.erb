@@ -7,7 +7,12 @@
   <% @gears.each do |gear| %>
     <div class="gear-item">
       <div class="gear-image">
-        <%= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' %>
+        <!--<％= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' ％> Refile の記述 %％-->
+        <% if gear.image.attached? %>
+          <%= image_tag gear.image.variant(resize:'300x300') %>
+        <% else %>
+          <p>NO IMAGE</p>
+        <% end %>
       </div>
       <div class="gear-text">
         <h4><%= gear.name %></h4>
