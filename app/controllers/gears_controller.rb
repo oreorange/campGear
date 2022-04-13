@@ -45,7 +45,8 @@ class GearsController < ApplicationController
   private
   
   def gear_params
-    params.require(:gear).permit(:name, :maker, :image, :introduction, :price, :genre_id, :user_id)
+    params.require(:gear).permit(:name, :maker, :introduction, :price, :genre_id, :user_id, images: [])
+    #images: [] は1番後ろに書かないとエラーになる
   end
   
 end
