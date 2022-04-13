@@ -9,7 +9,7 @@
       <div class="gear-image">
         <!--<％= attachment_image_tag gear, :image, :fill, 300, 300, format: 'jpeg' ％> Refile の記述 %％-->
         <% if gear.image.attached? %>
-          <%= image_tag gear.image.variant(resize:'300x300') %>
+          <%= image_tag gear.image.variant(resize:'300x300') %> <!--.variant(resize:'300x300') この記述消すとうまく行く-->
         <% else %>
           <p>NO IMAGE</p>
         <% end %>
