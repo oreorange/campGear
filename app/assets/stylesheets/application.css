@@ -28,6 +28,11 @@ header {
   font-size: 32px;
 }
 
+a {
+  text-decoration: none;
+  color: #008080;
+}
+
 .nav-list {
   text-align: center;
   padding: 10px 0;
